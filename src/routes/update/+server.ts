@@ -6,9 +6,9 @@ let message = 'initial';
 export async function POST({ request }) {
 	const { image } = await request.json();
 
-	mkdirSync('./images', { recursive: true });
+	// mkdirSync('./images', { recursive: true });
 	writeFileSync(
-		'./images/' + Date.now() + '.jpg',
+		'/images/' + Date.now() + '.jpg',
 		image.replace(/^data:image\/jpeg;base64,/, ''),
 		'base64url'
 	);
